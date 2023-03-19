@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center">Employees</h2>
+        <table class="table table-bordered">
+          <thead class="table-bordered">
+            <th class="text-center">First Name</th>
+            <th class="text-center">Last Name</th>
+            <th class="text-center">Gender</th>
+            <th class="text-center">Salary</th>
+            <th class="text-center">Action</th>
+          </thead>
+          <tbody>
+        <ng-container *ngFor="let e of employees">
+            <tr class="text-center">
+                <td>{{e.first_name}}</td>
+                <td>{{e.last_name}}</td>
+                <td>{{e.gender}}</td>
+                <td>{{e.salary | currency}}</td>
+                <td>
+                    <button type="button" (click)="handleEdit(e)" class="btn btn-primary me-1">Edit</button>
+                    <button type="button" (click)="handleView(e)" class="btn btn-success me-1">View</button>
+                  <button type="button" class="btn btn-danger">Delete</button></td>
+            </tr>
+            
+        </ng-container>
+    </tbody>
+    <br>
+    <button type="button" routerLink="/employee/add" class="btn btn-primary me-1">Add Employee</button>
+    </table>
+</div>
+</div>
+</div>
+
